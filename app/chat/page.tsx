@@ -1,10 +1,10 @@
 import { Container, Typography } from "@mui/material";
 
-export default function Main() {
+export default function Chat() {
   return (
     <>
       <Container className="pt-10">
-        <Typography>홈</Typography>
+        <Typography>채팅방 11관리</Typography>
       </Container>
     </>
   );
