@@ -1,4 +1,8 @@
+let _unityInstance = null;
+let _userId = null;
+
 const whaleInit = (userId) => {
+  _userId = userId;
   document.body.style.backgroundColor = "black";
   var canvas = document.querySelector("#unity-canvas");
 
@@ -95,6 +99,7 @@ const whaleInit = (userId) => {
         100 * progress + "%";
     })
       .then((unityInstance) => {
+        _unityInstance = unityInstance;
         document.querySelector("#unity-loading-bar").style.display = "none";
         document.querySelector("#unity-fullscreen-button").onclick = () => {
           unityInstance.SetFullscreen(1);
@@ -110,4 +115,12 @@ const whaleInit = (userId) => {
 
   document.body.appendChild(script);
 };
+
+const reloadUserInfo = () => {
+  if (_unityInstance) {
+    _unityInstance.SendMessage("GameStatus", "setUserId", _userId);
+  }
+};
+
 this.window.whaleInit = whaleInit;
+this.window.reloadUserInfo = reloadUserInfo;
