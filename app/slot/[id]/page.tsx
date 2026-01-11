@@ -4,6 +4,12 @@ import { useParams } from "next/navigation";
 import { useEffect } from "react";
 import "../../assets/game/whale/TemplateData/style.css";
 
+declare global {
+  interface Window {
+    whaleInit: any; // Use a more specific type if known, e.g., Function or object type
+  }
+}
+
 export default function Slot() {
   const { id } = useParams();
 
