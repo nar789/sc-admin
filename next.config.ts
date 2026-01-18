@@ -11,6 +11,12 @@ const nextConfig: NextConfig = {
         port: "1231",
         pathname: "/uploads/**",
       },
+      {
+        protocol: "http",
+        hostname: "nar005.cafe24.com",
+        port: "1231",
+        pathname: "/uploads/**",
+      },
     ],
   },
 };
