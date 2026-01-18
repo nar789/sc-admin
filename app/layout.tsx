@@ -56,8 +56,8 @@ export default function Home({
     setAnchorElUser(null);
   };
 
-  const pages = ["유저", "당첨번호", "로또방", "채팅"];
-  const pagesLink = ["/user", "/bingo", "/room", "/chat"];
+  const pages = ["유저", "당첨번호", "로또방", "채팅", "친구관리"];
+  const pagesLink = ["/user", "/bingo", "/room", "/chat", "/friends"];
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
   const pathname = usePathname();
